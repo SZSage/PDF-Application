@@ -1,6 +1,4 @@
 import os
-import time
-from PyQt6.QtCore import QThread
 from PyQt6.QtWidgets import QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QApplication, QMainWindow, QLineEdit, \
     QInputDialog, QFileDialog, QListWidgetItem, QListWidget, QProgressBar, QMessageBox
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
@@ -63,7 +61,7 @@ class MainWindow(QWidget):
         main_layout.addLayout(output_window)
         main_layout.addLayout(button_layout)
         self.setLayout(main_layout)
-
+        
     def select_files(self):
         """Opens file selector and select"""
         path = "/users/Sage/Documents/Coding/PDFMerge"
@@ -110,7 +108,6 @@ class MainWindow(QWidget):
 
 class button(QPushButton):
     """Creates buttons. Changes font & size"""
-
     def __init__(self, label_text):
         super().__init__()
         self.setText(label_text)
@@ -130,6 +127,7 @@ class progress_bar(QProgressBar):
 
 
 class output_field(QLineEdit):
+    """Create output field box"""
     def __init__(self):
         super().__init__()
         self.height = 50
